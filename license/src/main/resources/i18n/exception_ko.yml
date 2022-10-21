@@ -1,0 +1,119 @@
+# contract
+sqlSyntaxErrorException:
+  result: "-32008"
+  msg: "Sql Syntax 오류가 발생 하였습니다."
+numberFormatException:
+  result: "-32009"
+  msg: "Number Format 오류가 발생 하였습니다."
+invalidDefinitionException:
+  result: "-32010"
+  msg: "Invalid Definition 오류가 발생 하였습니다."
+constraintViolationException:
+  result: "-32011"
+  msg: "무결성 제약조건 오류가 발생 하였습니다."
+dataIntegrityViolationException:
+  result: "-32012"
+  msg: "무결성 제약조건 오류가 발생 하였습니다."
+inValidJwtTokenException:
+  result: "-32103"
+  msg: "InValid Jwt Token 오류가 발생 하였습니다."
+
+notFoundComponentTypeException:
+  result: "-32106"
+  msg: "ComponentType Enum class로 부터 값을 찾지 못하였습니다."
+componentVersionIsNullException:
+  result: "-32107"
+  msg: "ComponentVersion Value 값이 null입니다."
+licenseVersionIsMissMatchException:
+  result: "-32108"
+  msg: "계약정보파일의 라이선스 버전 정보가 유효하지 않습니다."
+inValidLicenseTypeException:
+  result: "-32109"
+  msg: "유효하지 않은 라이선스 타입입니다."
+alreadyUsedContractInfoException:
+  result: "-32110"
+  msg: "이미 사용중인 계약정보 입니다."
+licenseStatusMissMatchException:
+  result: "-32111"
+  msg: "라이선스 상태가 맞지 않습니다."
+
+# license
+unKnown:
+  result: "-33000"
+  msg: "알 수 없는 에러 발생"
+searchDataException:
+  result: "-33001"
+  msg: "데이터를 찾을 수 없음"
+searchSerialNoException:
+  result: "-33002"
+  msg: "시리얼 넘버를 찾을 수 없음"
+httpMessageNotReadableException:
+  result: "-33003"
+  msg: "요청 값을 읽을 수 없음"
+verifyJWTException:
+  result: "-33004"
+  msg: "JWT 를 검증 할 수 없음"
+loadPublicKeyException:
+  result: "-33005"
+  msg: "UI module로 부터 공개키를 로드할 수 없음"
+requestBodyNullException:
+  result: "-33006"
+  msg: "리퀘스트 바디가 비어있음"
+responseBodyNullException:
+  result: "-33007"
+  msg: "리스폰스 바디가 비어있음"
+alreadyExistsDataException:
+  result: "-33008"
+  msg: "이미 존재하는 데이타임"
+contractInfoMatchFailException:
+  result: "-33009"
+  msg: "계약정보 매칭에 실패함"
+licenseStatusIsNotUsedException:
+  result: "-33010"
+  msg: "계약정보 상태가 사용중이 아님"
+licenseTypeIsNotCloudMeteringException:
+  result: "-33011"
+  msg: "라이선스 타입이 종량제가 아님"
+fileNotFoundException:
+  result: "-33012"
+  msg: "지정된 파일을 찾을 수 없습니다"
+
+entryPointException:
+  result: "-33013"
+  msg: "id 또는 password 가 잘못되어 로그인을 할 수 없음"
+connectException:
+  result: "-33014"
+  msg: "Connetion 오류가 발생 하였습니다."
+connectTimeoutException:
+  result: "-33015"
+  msg: "Connect Timeout 오류가 발생 하였습니다."
+runtimeException:
+  result: "-33016"
+  msg: "Runtime 오류가 발생 하였습니다."
+nestedRuntimeException:
+  result: "-33017"
+  msg: "Nested Runtime 오류가 발생 하였습니다."
+batchUpdateException:
+  result: "-33018"
+  msg: "Batch Update 오류가 발생 하였습니다."
+jpaSystemException:
+  result: "-33019"
+  msg: "jpa System 오류가 발생 하였습니다."
+primarykeyDuplicationException:
+  result: "-33020"
+  msg: "primary Key Duplication 오류가 발생 하였습니다."
+notFoundDataException:
+  result: "-33021"
+  msg: "Not Found Data 오류가 발생 하였습니다."
+inputValueCheckException:
+  result: "-33022"
+  msg: "Input Value Check 오류가 발생 하였습니다."
+
+etcException:
+  result: "-33999"
+  msg: "알수 없는 오류가 발생하였습니다."
+
+#monitor
+httpRequestMethodNotSupportedException:
+  result: "-34008"
+  msg: "Http Request Method Not Supported 오류가 발생 하였습니다."

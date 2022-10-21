@@ -1,0 +1,117 @@
+# contract
+sqlSyntaxErrorException:
+  result: "-32008"
+  msg: "Sql Syntax Error"
+numberFormatException:
+  result: "-32009"
+  msg: "Number Format Error"
+invalidDefinitionException:
+  result: "-32010"
+  msg: "Invalid Definition Error"
+constraintViolationException:
+  result: "-32011"
+  msg: "Constraint Violation Exception"
+dataIntegrityViolationException:
+  result: "-32012"
+  msg: "Data Integrity Violation Exception"
+inValidJwtTokenException:
+  result: "-32103"
+  msg: "InValid Jwt Token Error"
+
+notFoundComponentTypeException:
+  result: "-32106"
+  msg: "Not Found ComponentType Enum class Value"
+componentVersionIsNullException:
+  result: "-32107"
+  msg: "ComponentVersion Value Is Null"
+licenseVersionIsMissMatchException:
+  result: "-32108"
+  msg: "License Version Is Miss Match Exception"
+inValidLicenseTypeException:
+  result: "-32109"
+  msg: "License Type Is InValid Exception"
+alreadyUsedContractInfoException:
+  result: "-32110"
+  msg: "Contract Info Is Already Used Exception"
+licenseStatusMissMatchException:
+  result: "-32111"
+  msg: "License Status Is Miss Match Exception"
+
+# license
+unKnown:
+  result: "-33000"
+  msg: "unknown error has occurred"
+searchDataException:
+  result: "-33001"
+  msg: "can not find data"
+searchSerialNoException:
+  result: "-33002"
+  msg: "can not find serial-no"
+httpMessageNotReadableException:
+  result: "-33003"
+  msg: "can not read request value"
+verifyJWTException:
+  result: "-33004"
+  msg: "can not verify JWT"
+loadPublicKeyException:
+  result: "-33005"
+  msg: "can not load public key from UI module"
+requestBodyNullException:
+  result: "-33006"
+  msg: "request body is null"
+responseBodyNullException:
+  result: "-33007"
+  msg: "response data is null"
+alreadyExistsDataException:
+  result: "-33008"
+  msg: "already exists data"
+contractInfoMatchFailException:
+  result: "-33009"
+  msg: "contract info matching fail"
+licenseStatusIsNotUsedException:
+  result: "-33010"
+  msg: "license Status Is Not Used"
+licenseTypeIsNotCloudMeteringException:
+  result: "-33011"
+  msg: "license type is not cloud-metering"
+fileNotFoundException:
+  result: "-33012"
+  msg: "file Not Found"
+entryPointException:
+  result: "-33013"
+  msg: "can not signin dut to wrong id or password"
+connectException:
+  result: "-33014"
+  msg: "Connection Fail Error"
+connectTimeoutException:
+  result: "-33015"
+  msg: "Connect Timeout Error"
+runtimeException:
+  result: "-33016"
+  msg: "Runtime Error"
+nestedRuntimeException:
+  result: "-33017"
+  msg: "Nested Runtime Error"
+batchUpdateException:
+  result: "-33018"
+  msg: "Batch Update Error"
+jpaSystemException:
+  result: "-33019"
+  msg: "jpa System Error"
+primarykeyDuplicationException:
+  result: "-33020"
+  msg: "primary Key Duplication Error"
+notFoundDataException:
+  result: "-33021"
+  msg: "Not Found Data Error"
+inputValueCheckException:
+  result: "-33022"
+  msg: "Input Value Check Error"
+etcException:
+  result: "-33999"
+  msg: ""
+
+#monitor
+httpRequestMethodNotSupportedException:
+  result: "-34008"
+  msg: "Http Request Method Not Supported Error"

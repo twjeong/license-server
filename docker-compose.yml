@@ -1,0 +1,100 @@
+version: '3.7'
+
+networks:
+  default:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.17.0.0/16
+
+services:
+  storage:
+    container_name: mariadb
+    image: mariadb:10.5
+    environment:
+      MYSQL_DATABASE: mysql
+      MYSQL_ROOT_PASSWORD: Qhdks./12
+      MYSQL_PASSWORD: Qhdks./12
+    expose:
+      - "3306"
+    command: --init-file /ps/ps_create_dbschema.sql
+    volumes:
+      - ./docker/mysql/data:/var/lib/mysql
+      - ./ps_create_dbschema.sql:/ps/ps_create_dbschema.sql
+
+  discovery:
+    container_name: discovery_module
+    build:
+      context: ./discovery
+      dockerfile: ./Dockerfile_discovery
+    image: discovery_module:4.0.303.1
+    ports:
+      - 8761:8761
+    depends_on:
+      - storage
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://storage:3306?characterEncoding=UTF-8&serverTimezone=Asia/Seoul&sendStringParametersAsUnicode=false
+      ERROR-MESSAGE-LOCALE: KR
+      SPRING_PROFILES_ACTIVE: local
+      eureka.client.service-url.defaultZone: http://${PEER_IP_ADDRESS}:8761/eureka
+      eureka.instance.ip-address: ${HOST_IP_ADDRESS}
+    volumes:
+      - ./docker/webapp/logs/eureka_module:/logs
+      - ./docker/webapp/sslauth/ui:/sslauth
+      - ./docker/webapp/conf:/conf
+      
+  gateway:
+    container_name: gateway_module
+    build:
+      context: ./gateway
+      dockerfile: ./Dockerfile_gateway
+    image: gateway_module:4.0.303.1
+    ports:
+      - 8081:8081
+    extra_hosts:
+      - "license-ha1:${PEER_IP_ADDRESS}"
+    depends_on:
+      - discovery
+    environment:
+      ERROR-MESSAGE-LOCALE: KR
+      SPRING_PROFILES_ACTIVE: local
+      eureka.client.service-url.defaultZone: http://discovery:8761/eureka/
+      
+  license-ha2:
+    container_name: license_module
+    build:
+      context: ./license
+      dockerfile: ./Dockerfile_license
+    image: license_module:4.0.303.1
+    ports:
+      - 8082:8082
+    depends_on:
+      - storage
+      - discovery
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://storage:3306?characterEncoding=UTF-8&serverTimezone=Asia/Seoul&sendStringParametersAsUnicode=false
+      ERROR-MESSAGE-LOCALE: KR
+      SPRING_PROFILES_ACTIVE: local
+      eureka.client.service-url.defaultZone: http://discovery:8761/eureka/
+      eureka.instance.hostname: license-ha2
+    volumes:
+      - ./docker/webapp/logs/license_module:/logs
+      - ./docker/webapp/conf/license:/conf
+      - ./docker/webapp/backup:/backup
+
+  ui:
+    container_name: ui_module
+    build:
+      context: ./ui_vue
+      dockerfile: ./Dockerfile_ui
+    image: ui_module:4.0.303.1
+    ports:
+      - 8443:8443
+    depends_on:
+      - gateway
+    volumes:
+      - ./docker/webapp/logs/ui_module:/logs
+      - ./docker/webapp/sslauth/ui:/sslauth
+      - ./docker/webapp/conf:/conf
+

@@ -1,0 +1,269 @@
+@charset "utf-8";
+/*======================== 폰트 적용하기 =====================*/
+@font-face {
+    font-family: 'Noto Sans KR'; font-style: normal; font-weight: 100; font-display: fallback;
+    src: url(../fonts/NotoSans-Thin.woff2) format('woff2'), url(../fonts/NotoSans-Thin.woff) format('woff'), url(../fonts/NotoSans-Thin.otf) format('opentype'); }
+@font-face {
+    font-family: 'Noto Sans KR'; font-style: normal; font-weight: 300; font-display: fallback;
+    src: url(../fonts/NotoSans-Light.woff2) format('woff2'), url(../fonts/NotoSans-Light.woff) format('woff'), url(../fonts/NotoSans-Light.otf) format('opentype'); }
+@font-face {
+    font-family: 'Noto Sans KR'; font-style: normal; font-weight: 400; font-display: fallback;
+    src: url(../fonts/NotoSans-Regular.woff2) format('woff2'), url(../fonts/NotoSans-Regular.woff) format('woff'), url(../fonts/NotoSans-Regular.otf) format('opentype'); }
+@font-face {
+    font-family: 'Noto Sans KR'; font-style: normal; font-weight: 500; font-display: fallback;
+    src: url(../fonts/NotoSans-Medium.woff2) format('woff2'), url(../fonts/NotoSans-Medium.woff) format('woff'), url(../fonts/NotoSans-Medium.otf) format('opentype'); }
+@font-face {
+    font-family: 'Noto Sans KR'; font-style: normal; font-weight: 700; font-display: fallback;
+    src: url(../fonts/NotoSans-Bold.woff2) format('woff2'), url(../fonts/NotoSans-Bold.woff) format('woff'), url(../fonts/NotoSans-Bold.otf) format('opentype'); }
+@font-face {
+    font-family: 'Noto Sans KR'; font-style: normal; font-weight: 900; font-display: fallback;
+    src: url(../fonts/NotoSans-Black.woff2) format('woff2'), url(../fonts/NotoSans-Black.woff) format('woff'), url(../fonts/NotoSans-Black.otf) format('opentype'); }
+
+* { margin: 0; padding: 0; border: 0; outline: 0; vertical-align: middle; background: transparent; box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif, "Font Awesome 5 Free"; }        /*  영문글꼴을 맨앞에 배치하면 영어는 영문으로 표시됨    */
+html { font-size: 10px; font-weight: 300; color: #6c727e; /* min-height: 40rem; */ }  /* 1rem=10px, 1.3rem=13px */
+body { font-size: 1.4rem; background-color: transparent; line-height: 1; }
+body::-webkit-scrollbar { width: 0 !important; overflow: -moz-scrollbars-none; -ms-overflow-style: none; }  /* Body 스크롤바 숨기기 */
+body#login { background-color: #9096a0; display: none; }    /* 로그인 페이지일 경우 배경색  */
+
+/****************************************************************************/
+/*                                  공통 사항                               */
+/****************************************************************************/
+.test_bd { border: 0.1rem solid orange !important; }   /* layout 확인용 경계선 */
+
+/*------------------- 배경 컬러  ---------------------*/
+.bg_bluegreen {    /* 블루 그린 버튼을 위한 배경 컬러 */
+    background: linear-gradient(to right, #458aeb, #12af92) !important;
+    border: 0.1rem solid #458aeb; }
+.bg_indigo { background-color: #458aeb !important; }     /* 포인트 블루 컬러 */
+.bg_green { background-color: #12af92 !important; }     /* 그린 컬러 */
+.bg_yellow { background-color: #edb456 !important; }     /* 옐로우 컬러 */
+.bg_orange { background-color: #ff8200 !important; }     /* 오렌지 컬러 */
+.bg_red { background-color: #f66363 !important; }     /* 레드 컬러 */
+.bg_sky { background-color: #3399ff !important; }     /* 스카이 블루 */
+.bg_purple { background-color: #6666ff !important; }     /* 퍼플 */
+.bg_gray { background-color: #666 !important; }       /* 그레이 */
+.bg_dark { background-color: #6c727e !important; }     /* 다크 그레이 */
+.bg_lightgray { background-color: #ececec !important; }    /* 라이트 그레이 */
+.bg_black { background-color: #000 !important; }     /* 블렉 */
+.bg_white { background-color: #fff !important; }     /* 화이트 */
+.bg_darkblue { background-color: #1a2031 !important; }     /* 다크 블루 */
+
+/*------------------- 컬러  ---------------------*/
+.color_indigo { color: #458aeb !important; }     /* 포인트 블루 컬러 */
+.color_green { color: #12af92 !important; }     /* 그린 컬러 */
+.color_yellow { color: #edb456 !important; }     /* 옐로우 컬러 */
+.color_orange { color: #ff8200 !important; }     /* 오렌지 컬러 */
+.color_red { color: #f66363 !important; }     /* 레드 컬러 */
+.color_sky { color: #3399ff !important; }     /* 스카이 블루 */
+.color_purple { color: #6666ff !important; }     /* 퍼플 */
+.color_gray { color: #666 !important; }     /* 그레이 */
+.color_dark { color: #6c727e !important; }     /* 다크 그레이 */
+.color_lightgary { color: #ececec !important; }     /* 라이트 그레이 */
+.color_black { color: #000 !important; }     /* 블랙 */
+.color_white { color: #fff !important; }     /* 화이트 */
+.color_darkblue { color: #1a2031 !important; }     /* 다크 블루 */
+
+/*------------------- 링크 스타일(기본) ---------------------*/
+a { color: #6c727e; text-decoration: none; }  /* link, visited 동일하게 설정할 경우 */
+a:hover, a:active { color: #458aeb; cursor: pointer; }   /* 기본 */
+
+/****************************************************************************/
+/*                            로그인 페이지                                 */
+/****************************************************************************/
+.login_block {      /* 전체 로그인 박스 영역 */
+    position: absolute; left: calc(50% - 39rem); top: calc(50% - 24rem); width: 78rem; height: 48rem;
+    background: #fff url("../img/login_bg.png") center center/100% 100%; border-radius: 0.4rem; padding: 6rem 5rem 3rem 5rem;
+    -webkit-box-shadow: 0 0 0.8rem 0.3rem rgba(0, 0, 0, 0.2); box-shadow: 0 0 0.8rem 0.3rem rgba(0, 0, 0, 0.1); /* 그림자: x, y, blur, spread, color */
+}
+
+/*------------------- 로그인 컨텐츠 영역 ---------------------*/
+.login_wrap { width: 34.5rem; height: 35rem; }  /* 로그인 컨트롤 영역 */
+.login_wrap section:nth-child(1) h1 { color: #9096a0; font-size: 3rem; font-weight: 400; }    /* 타이틀 영역 */
+.login_wrap section:nth-child(1) h1 span { display: inline-block; font-weight: 500; vertical-align: bottom; }    /* Login 글자 */
+
+.login_input {     /*  로그인 콘트롤 블럭 */
+    position: relative; display: block;
+    -webkit-transition: all 0.3s; -moz-transition: all 0.3s; -ms-transition: all 0.3s; transition: all 0.3s; }
+.login_input img:nth-child(2) { position: absolute; right: 0.8rem; top: 0.8rem; width: 1.3rem; }  /* 아이콘 - 아이디 */
+.login_input img:nth-child(4) { position: absolute; right: 0.8rem; top: 5.1rem; width: 1.2rem; }   /* 아이콘 - 비밀번호 */
+
+.login_wrap section:last-child { position: absolute; left: 5rem; bottom: 3rem; font-size: 1.2rem; font-weight: 300; }  /* copyright */
+.login_wrap section:last-child img { width: 11rem; vertical-align: bottom; margin-right: 1rem; }  /* 회사로고 */
+
+/*------------------- 사용자 추가 컨텐츠 영역 ---------------------*/
+.adduser_input {     /* 전체 영역 */
+    position: absolute; left: 0; top: 14rem; width: 34.5rem; height: 35rem; opacity: 0; z-index: -1;  /* 클릭안되게 잠깜 숨김 */
+    -webkit-transform: translateX(30rem); transform: translateX(30rem);
+    -webkit-transition: all 0.3s; -moz-transition: all 0.3s; -ms-transition: all 0.3s; transition: all 0.3s; }
+.adduser_input h2 { color: #6c727e; font-size: 1.8rem; font-weight: 400; margin-bottom: 2rem; }    /* 타이틀 영역 */
+
+.adduser_input img:nth-child(3) { position: absolute; right: 0.8rem; top: 4.6rem; width: 1.3rem; }  /* 아이콘 - 아이디 */
+.adduser_input img:nth-child(5) { position: absolute; right: 0.8rem; top: 8.8rem; width: 1.3rem; }  /* 아이콘 - 비밀번호 */
+.adduser_input img:nth-child(7) { position: absolute; right: 0.8rem; top: 13rem; width: 1.3rem; }  /* 아이콘 - 비밀번호 확인 */
+
+/****************************************************************************/
+/*                             INDEX 페이지                                 */
+/****************************************************************************/
+
+/*------------------- HEADER ---------------------*/
+header { position: fixed; left: 0; top: 0; width: 100%; height: 6rem; line-height: 6rem; padding: 0 2rem; background-color: #1a2031;  }
+.logo_damo { width: 8rem; margin-right: 1rem; }    /* D'Amo 로고 */
+.product_name { display: inline-block; font-size: 2rem; font-weight: 300; color: #fff; margin-right: 2rem; }    /* 제품명 */
+.menu_hamburger { width: 1.5rem; }  /* 햄버거 메뉴 아이콘 */
+.icon_user { width: 2rem; margin-right: 1rem; }    /* 계정 유저 아이콘 */
+.account p:first-child { line-height: 4rem; color: #fff; font-size: 1.3rem; font-weight: 400; }   /* 아이디 */
+.account p:last-child { line-height: 2rem; font-size: 1.2rem; font-weight: 300; }  /* 권한 */
+.account_v {    /* V 아이콘 */
+    display: inline-block; width: 6rem; height: 3rem; line-height: 3rem; font-size: 1.5rem; text-align: center; margin-left: -1.5rem;
+    color: #7e8ea8; transform: rotateZ(90deg); }
+.icon_error { width: 4rem; margin-top: -0.55rem; }  /* 에러 아이콘 */
+.icon_logout { width: 1.7rem; margin-top: -0.55rem; }  /* 로그아웃 아이콘 */
+.icon_refresh { width: 1.7rem; margin-right: 1.5rem; float: right; }  /* 새로고침 아이콘 */
+
+/*------------------- Main Menu ---------------------*/
+nav { clear: both; position: fixed; left: 0; top: 6rem; bottom: 0; width: 25rem; padding-top: 1.5rem; background-color: #2a3046;
+    -webkit-transition: left 0.3s; -moz-transition: left 0.3s; -ms-transition: left 0.3s; transition: left 0.3s; }
+nav ul { width: 100%; }
+nav ul li { position: relative; padding: 0 2rem;
+    -webkit-transition: background-color 0.3s; -moz-transition: background-color 0.3s; -ms-transition: background-color 0.3s; transition: background-color 0.3s; }
+nav ul li:hover { cursor: pointer; background-color: #1a2031; }   /* 마우스 오버 시 */
+nav ul li.on { background-color: #1a2031; }    /* 선택된 메뉴 배경 */
+nav ul li.on a { color: #458aeb; }    /* 선택된 메뉴 텍스트 컬러 */
+nav ul li.on::before {   /* 우측 삼각형 돗 */
+    content: ""; position: absolute; display: inline-block; width: 0; height: 0; right: 0; top: 1.5rem;
+    border-top: 0.8rem solid transparent; border-right: 0.8rem solid #f2f8ff; border-bottom: 0.8rem solid transparent; border-left: 0.8rem solid transparent; }
+nav ul li a {        /* 메인 메뉴 폰트크기 */
+    display: inline-block; color: #7e8ea8; width: 100%; padding: 1.5rem 0; font-size: 1.4rem; font-weight: 300; cursor: pointer; }
+nav ul li a span { display: inline-block; width: 2rem; padding-bottom: 0.3rem; text-align: center; margin-right: 0.8rem; } /* 이미지를 감싸는 영역 */
+nav ul li:nth-child(1) img { width: 1.9rem; }    /* 아이콘 홈 */
+nav ul li:nth-child(2) img { width: 1.9rem; }    /* 아이콘 라이선스 */
+nav ul li:nth-child(3) img { width: 2rem; }    /* 아이콘 클라우드 */
+nav ul li:nth-child(4) img { width: 1.8rem; }    /* 아이콘 계약 정보 현황 */
+nav ul li:nth-child(5) img { width: 1.3rem; }    /* 아이콘 로그 */
+nav ul li:nth-child(6) img { width: 1.8rem; }    /* 아이콘 설정 */
+nav ul li:nth-child(7) img { width: 1.8rem; }    /* 아이콘 가이드 */
+nav ul li:nth-child(8) img { width: 1.8rem; }    /* 아이콘 에러 페이지 */
+
+/*------------------- Account Menu ---------------------*/
+.account_menu {
+    position: fixed; right: 7rem; top: 6.5rem; border: 0.1rem solid #ccc; background-color: #fff; display: none;
+    border-radius: 0.3rem; box-shadow: 0 0 0.8rem 0.3rem rgba(0, 0, 0, 0.1);
+}
+.account_menu ul { position: relative; }   /* 삼각형 돗 기준좌표 */
+.account_menu ul::before {   /* 삼각형 돗 */
+    content: ""; position: absolute; left: calc(50% - 0.8rem); top: -0.8rem;
+    border-style: solid; border-width: 0 0.8rem 0.8rem 0.8rem; border-color: transparent transparent rgba(255, 255, 255, 0.9) transparent;
+}
+.account_menu ul li a { display: inline-block; padding: 1rem; }  /* 링크 영역 설정 */
+.account_menu ul li:nth-child(2n) { background-color: #f9f9f9; }   /* 짝수줄 배경색 */
+.account_menu ul li:hover { background-color: #f2f8ff; }  /* 마우스 오버시 배경색 */
+
+/*------------------- Contents Block ---------------------*/
+.contents_wrap {    /* display: none for fadein effect */
+    clear: both; position: fixed; left: 25rem; top: 6rem; bottom: 0; width: calc(100% - 25rem); overflow: auto; background-color: #f2f8ff; padding-bottom: 3rem;
+    -webkit-transition: left 0.3s, width 0.3s; -moz-transition: left 0.3s, width 0.3s; -ms-transition: left 0.3s, width 0.3s; transition: left 0.3s, width 0.3s; }
+
+/* iframe 설정,  iframe for fadeIn Effects , 최소너비 */
+iframe { display: block; width: 100%; min-width: 96rem; min-height: 30rem; margin: 0; border: none; overflow-y: auto; overflow-x: auto; display: none; }
+iframe:focus { outline: none; }
+
+/*------------------- FOOTER ---------------------*/
+footer {
+    clear: both; position: fixed; left: 25rem; bottom: 0; width: calc(100% - 25rem); height: 3rem; line-height: 3rem; background-color: #f2f8ff;
+    -webkit-transition: left 0.3s, width 0.3s; -moz-transition: left 0.3s, width 0.3s; -ms-transition: left 0.3s, width 0.3s; transition: left 0.3s, width 0.3s; }
+footer p { font-size: 1rem; text-align: center; }
+
+/*----------- 팝업 윈도우  -----------------*/
+.popup_win {
+    position: fixed; top: 10%; width: auto; background-color: #fff; border-radius: 0.2rem 0.2rem;
+    box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.2); ; transition: all 0.3s; transform: translateY(10rem); z-index: -1; opacity: 0; }
+.popup_win > h2 {   /* 타이틀 */
+    font-size: 1.5rem; font-weight: 400; height: 4rem; line-height: 4rem; padding: 0 2rem; border-radius: 0.2rem 0.2rem 0 0;
+    color: #fff; background-color: #1a2031; }
+.popup_win > .wrap_cont { width: 100%; padding: 2rem; overflow: visible;  }  /* 컨텐츠 전체를 감싸는 영역 */
+
+/*----------- 오버레이 막  -----------------*/
+#overlay {
+    position: fixed; left: 0; right: 0; top: 0; bottom: 0; background-color: rgba(0,0,0,0.8); z-index: -1; opacity: 0; transition: all 0.3s;
+}
+
+/****************************************************************************/
+/*                    IFRAME 내부 페이지 공통 클래스                        */
+/****************************************************************************/
+.bg_contents { background-color: #f2f8ff; }  /* 우측 컨텐츠 페이지 전체 배경 */
+.container { padding: 3rem; min-width: 92rem; min-height: 1200px; }   /*  컨텐츠 감싸는 블럭 */
+
+/*------------------- Page Title & Path ---------------------*/
+.pagetitle { width: 100%; height: 2rem; line-height: 2rem; margin-bottom: 2rem; }
+.pagetitle h2 { font-size: 2rem; font-weight: 500; color: #000; }   /* 페이지 타이틀 */
+.pagetitle div:nth-child(1) p { font-size: 1.4rem; width: auto;  }    /* 페이지 설명 */
+.pagetitle div:nth-child(2) p { font-size: 1.3rem; }    /* 페이지 경로 */
+.pagetitle div:nth-child(2) p span { font-weight: 400; color: #000; }  /* 선택된 경로 */
+
+/*------------------- Section Block ---------------------*/
+.section_block {
+    width: 100%; border: 0.1rem solid #cbd3e0; background-color: #fff; border-radius: 0.3rem;
+    -webkit-box-shadow: 0 0 0.8rem 0.3rem rgba(0, 0, 0, 0.2); box-shadow: 0 0 0.8rem 0.3rem rgba(0, 0, 0, 0.1); /* 그림자: x, y, blur, spread, color */
+    margin-bottom: 1.5rem; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; -ms-transition: all 0.3s; transition: all 0.3s; }
+.section_block:last-child { margin-bottom: 0; }    /* 마지막 섹션의 하단 마진 제거 */
+.section_block .section_title { margin-top: 2rem; }
+.section_block .section_title h3 { position: relative; font-size: 1.6rem; font-weight: 400; color: #000; padding-left: 2rem; }  /* 섹션 타이틀 */
+.section_block .section_title h3::before { content: ""; position: absolute; width: 0.2rem; height: 1.6rem; left: 0; top: 0.1rem; background-color: #458aeb; }
+.section_block .section_title p { font-size: 1.4rem; vertical-align: middle; }    /* 섹션 설명 */
+.section_block .section_title img { width: 1.8rem; }    /* 기간 설정 아이콘(톱니) */
+
+/*------------------- Section Block Animation 순서 ---------------------*/
+/* 첫번째 블럭은 페이지 타이틀 섹션이므로 제외 */
+.section_block:nth-child(2) { transition-delay: 0; } /* 애니메이션 순서 1 */
+.section_block:nth-child(3) { transition-delay: 0.1s; } /* 애니메이션 순서 2 */
+.section_block:nth-child(4) { transition-delay: 0.2s; } /* 애니메이션 순서 3 */
+.section_block:nth-child(5) { transition-delay: 0.3s; } /* 애니메이션 순서 4 */
+.section_block:nth-child(5) { transition-delay: 0.4s; } /* 애니메이션 순서 5 */
+.section_block:nth-child(6) { transition-delay: 0.5s; } /* 애니메이션 순서 6 */
+
+/*------------------- Section Block 의 컨텐츠 영역 ---------------------*/
+.section_block .section_contents { padding: 1.5rem; }
+
+/*------------------- icon 설정 ---------------------*/
+img.icon_show { width: 2.5rem; }   /* 라이선스 발급 팝업창 우측 상세보기 아이콘 */
+
+
+/****************************************************************************/
+/*             클라우드 서비스 사용량 / 계약정보 현황 페이지                */
+/****************************************************************************/
+/*----------- 왼쪽 영역 ---------*/
+.section_contents .list_left { width: 20%; border: 0.1rem solid #ccc; overflow-y: auto; } /* 좌측 리스트 컨트롤 영역 */
+
+/*----------- 오른쪽 영역 ---------*/
+.section_contents .list_right { width: 80%;  /* 100% - 좌측 리스트컨트롤 너비 */ padding-left: 2rem;  }  /* 우측 컨텐츠 영역 */
+.section_contents h3.subtitle { font-size: 1.6rem; font-weight: 400; height: 2.3rem; line-height: 1; border-bottom: 0.1rem solid #7e8ea8; }  /* 서브 타이틀 */
+.section_contents h3 span { display: inline-block; font-size: 1.4rem; height: 2rem; line-height: 1; color: #458aeb; vertical-align: middle; }  /* 선택한 고객사명 */
+.line_graph { border: 0.1rem solid #ccc; }
+
+/****************************************************************************/
+/*                            설정 페이지                                 */
+/****************************************************************************/
+.setupOk { display: none; } /* 확인 버튼 처음에 숨기기 */
+
+/****************************************************************************/
+/*                            가이드 페이지                                 */
+/****************************************************************************/
+.colorcircle { display: inline-block; width: 5rem; height: 5rem; border-radius: 50%; }   /* 원형 컬러 패널 */
+
+/****************************************************************************/
+/*                             에러 페이지                                 */
+/****************************************************************************/
+.errorpage { width: 68rem; min-height: 20rem; margin: 2rem auto 5rem auto; padding-bottom: 2rem; background: url("../img/errorpage_bg.png") no-repeat left bottom; }
+.errorpage .errorbox { padding: 0 0 2rem 22rem; }   /* 타이틀과 내용 포함 박스 */
+.errorpage .errorbox h2 { font-size: 4rem; font-weight: 700; color: #ff8200; margin-bottom: 20px; }  /* Error Page 글자 */
+.errorpage .errorbox p { background-color: rgba(255, 255, 255, 0.9); line-height: 1.5; padding-bottom: 10px; }
+
+/****************************************************************************/
+/*                         반응형 너비 설정                                 */
+/****************************************************************************/
+@media only screen and (max-width: 1200px) {
+    /* 대시보드 메모리, 디스크, CPU 현황의 우측 레이블 상단 마진 추가 */
+    body > div > section:nth-child(4) > div.section_contents > div > div > div > div.wall.txt_center > label { display: block; margin-top: 2rem; }
+
+}

@@ -1,0 +1,35 @@
+server:
+  port: 8081
+  servlet:
+    session:
+      cookie:
+        http-only: true
+  http2:
+    enabled: true
+  ssl:
+    protocol: TLS
+    enabled-protocols: TLSv1.2,TLSv1.3
+    key-store: keystore.p12
+    key-store-type: PKCS12
+    key-store-password: 123456
+    key-alias: spring
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: license
+          uri: lb://LICENSE
+          predicates:
+            - Path=/license-service/**,/licenses/**,/common-agent/**,/license-ext-info/**
+          filters:
+            - RewritePath=/license-service/(?<segment>.*),/$\{segment}

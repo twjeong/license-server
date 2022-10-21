@@ -1,0 +1,60 @@
+spring:
+  application:
+    name: license
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306?characterEncoding=UTF-8&serverTimezone=Asia/Seoul&sendStringParametersAsUnicode=false
+    username: root
+    password: Qhdks./12
+  messages:
+    basename: i18n/exception
+    encoding: utf-8
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+    open-in-view: false
+  profiles:
+    active: local
+  output:
+    ansi:
+      enabled: always
+server:
+  port: 8082
+  servlet:
+    session:
+      cookie:
+        http-only: true
+  http2:
+    enabled: true
+  ssl:
+    protocol: TLS
+    enabled-protocols: TLSv1.2+TLSv1.3
+    key-store: keystore.p12
+    key-store-type: PKCS12
+    key-store-password: 123456
+    key-alias: spring
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    secure-port-enabled: true
+    lease-renewal-interval-in-seconds: 30
+    lease-expiration-duration-in-seconds: 90
+
+storage-ip:
+storage-port: 3306
+
+backup:
+  parent-dir: backup
+  minute: 0
+  hour: 0
+  day: 1
+  month: 3,6,9,12
+  enable: false
+
+error-message-locale: kr

@@ -1,0 +1,7 @@
+FROM nginx:latest
+
+COPY ./nginx.conf /etc/nginx/
+COPY ./domain.com.* /etc/nginx/
+COPY ./dist /dist
+
+CMD ["nginx", "-g", "daemon off;"]

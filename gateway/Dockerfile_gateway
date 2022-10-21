@@ -1,0 +1,19 @@
+FROM alpine:3.15
+
+RUN apk update
+
+RUN apk add openjdk8-jre
+
+RUN apk add tzdata
+
+ENV TZ Asia/Seoul
+
+COPY ./keystore.p12 .
+
+CMD ulimit -c unlimited
+
+COPY ./build/libs/gateway-4.0.303.1.jar gateway.jar
+
+EXPOSE 8081
+
+ENTRYPOINT ["java", "-jar", "/gateway.jar"]
